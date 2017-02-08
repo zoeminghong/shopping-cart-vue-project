@@ -1,6 +1,6 @@
-# my-project
+# shopping-cart-vue-project
 
-> A Vue.js project
+> 通过vue的组件化构建一个简易购物车Demo
 
 ## Build Setup
 
@@ -15,4 +15,4 @@ npm run dev
 npm run build
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
