@@ -1,0 +1,33 @@
+.align-left {
+  text-align: left;
+}
+.align-right {
+  text-align: right;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.checkbox {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 1px solid #9d9d9d;
+}
+.checkbox.checked:after {
+  position: relative;
+  top: 50%;
+  display: inline-block;
+  content: '';
+  height: 10px;
+  width: 5.600000000000001px;
+  border: 2px solid #ff302e;
+  border-left: none;
+  border-top: none;
+  transform: translateY(-50%) rotateZ(45deg) translate(-15%, -5%);
+}

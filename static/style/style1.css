@@ -1,0 +1,170 @@
+#shoppingCar .title-wrap {
+  margin-top: 50px;
+  font: 20px/1.5 a;
+  font-weight: 400;
+  text-align: center;
+}
+#shoppingCar .title-wrap .title {
+  width: 15.000000000000002%;
+  text-align: center;
+}
+#shoppingCar .title-wrap .line-v {
+  width: 41.66666666666667%;
+  height: 1px;
+  background-color: #ccc;
+  margin-top: -4px;
+  vertical-align: middle;
+}
+#shoppingCar .detial-wrap {
+  margin-top: 30px;
+  text-align: center;
+  width: 100%;
+  border-collapse: collapse;
+  border-bottom: 1px solid #ccc;
+  line-height: 50px;
+}
+#shoppingCar .detial-wrap tr th {
+  color: #f9f9f9;
+  background: #585858;
+}
+#shoppingCar .detial-wrap tr th:first-child {
+  border-radius: 8px 0 0 8px;
+}
+#shoppingCar .detial-wrap tr th:last-child {
+  border-radius: 0 8px 8px 0;
+}
+#shoppingCar .detial-wrap tr td {
+  height: 150px;
+  width: 10%;
+}
+#shoppingCar .detial-wrap tr td.goods-detial-wrap {
+  width: 60.00000000000001%;
+  vertical-align: top;
+}
+#shoppingCar .detial-wrap tr td.goods-detial-wrap .goods-detial {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 87.5%;
+  height: 60%;
+}
+#shoppingCar .detial-wrap tr td.goods-detial-wrap .goods-detial .good-img {
+  margin: 0 5px;
+  height: 90px;
+  width: 125.99999999999999px;
+}
+#shoppingCar .detial-wrap tr td.goods-detial-wrap .goods-detial .good-img img {
+  height: 100%;
+  width: 100%;
+}
+#shoppingCar .detial-wrap tr td.goods-detial-wrap .goods-detial .good-text {
+  line-height: 2.2;
+  text-align: left;
+  height: 100%;
+  margin-left: 25px;
+  font-weight: bold;
+  width: 58.333333333333336%;
+}
+#shoppingCar .detial-wrap tr td.goods-detial-wrap .goods-detial .good-text .gifts {
+  width: 100%;
+}
+#shoppingCar .detial-wrap tr td.goods-detial-wrap .goods-detial .good-text .gifts dt {
+  display: inline-block;
+  margin-right: 10px;
+}
+#shoppingCar .detial-wrap tr td.goods-detial-wrap .goods-detial .good-text .gifts dd {
+  display: inline-block;
+  color: #ababab;
+  margin-right: 15px;
+}
+#shoppingCar .detial-wrap tr td.buy-num .choosenum-handler i {
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  position: relative;
+}
+#shoppingCar .detial-wrap tr td.buy-num .choosenum-handler i.icon-minus:before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 2px;
+  background-color: #2f3130;
+}
+#shoppingCar .detial-wrap tr td.buy-num .choosenum-handler i.icon-plus:before,
+#shoppingCar .detial-wrap tr td.buy-num .choosenum-handler i.icon-plus:after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  background-color: #2f3130;
+}
+#shoppingCar .detial-wrap tr td.buy-num .choosenum-handler i.icon-plus:before {
+  width: 8px;
+  height: 2px;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+#shoppingCar .detial-wrap tr td.buy-num .choosenum-handler i.icon-plus:after {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 8px;
+}
+#shoppingCar .detial-wrap tr td.buy-num .choosenum-handler .countbox {
+  vertical-align: middle;
+  height: 20px;
+  line-height: 20px;
+  width: 30px;
+  margin: 0 10px 0 13px;
+  border: 1px solid #6190ef;
+  border-radius: 2px;
+}
+#shoppingCar .detial-wrap tr td.icon {
+  color: #1e1c1c;
+}
+#shoppingCar .checkbox-wrap {
+  height: 100%;
+  width: 12.5%;
+}
+#shoppingCar .checkout-wrap {
+  height: 80px;
+  line-height: 80px;
+}
+#shoppingCar .checkout-wrap .total-check-wrap {
+  text-align: center;
+  width: 60.00000000000001%;
+}
+#shoppingCar .checkout-wrap .total-check-wrap .check-text {
+  padding-top: 1px;
+  text-align: left;
+  font-weight: 600;
+}
+#shoppingCar .checkout-wrap .total-check-wrap .check-text .checked-all {
+  padding-left: 0.5em;
+  color: #ff302e;
+}
+#shoppingCar .checkout-wrap .total-check-wrap .check-text .unchecked-all {
+  padding-left: 1.5em;
+}
+#shoppingCar .checkout-wrap .checkout .total-money {
+  display: inline-block;
+  font-size: 20px;
+  margin-right: 1.5em;
+}
+#shoppingCar .checkout-wrap .checkout .total-money span {
+  margin-right: 0.8em;
+}
+#shoppingCar .checkout-wrap .checkout .total-money span.amount {
+  color: #ff302e;
+}
+#shoppingCar .checkout-wrap .checkout input {
+  color: #fff;
+  font-size: 20px;
+  width: 7em;
+  line-height: 1.5;
+  border-radius: 5px;
+}
