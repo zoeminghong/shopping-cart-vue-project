@@ -1,5 +1,7 @@
 <template>
   <form>
+    {{message}}
+    <slot>我是替补内容</slot>
     <table class="detial-wrap">
       <tr>
         <th>商品信息</th>
@@ -50,6 +52,7 @@
 <script>
 export default {
   name: 'hello',
+  props:['message'],
   data(){
     return{cartList:[]}
   },
@@ -71,10 +74,12 @@ export default {
     },
     plus:function (item) {
       item.count++;
+      this.$emit('change')
     },
     minus:function (item) {
       if(item.count>1){
         item.count--;
+        this.$emit('change')
       }else{
         item.count=1;
       }
