@@ -22,7 +22,9 @@ module.exports = merge(baseWebpackConfig, {
     }),
     // https://github.com/glenjamin/webpack-hot-middleware#installation--usage
     new webpack.optimize.OccurrenceOrderPlugin(),
+    //启用热部署
     new webpack.HotModuleReplacementPlugin(),
+    //用来跳过编译时出错的代码并记录
     new webpack.NoErrorsPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({

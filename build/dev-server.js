@@ -16,7 +16,7 @@ var proxyTable = config.dev.proxyTable
 
 var app = express()
 var compiler = webpack(webpackConfig)
-
+//使用热重载
 var devMiddleware = require('webpack-dev-middleware')(compiler, {
   publicPath: webpackConfig.output.publicPath,
   stats: {
@@ -24,10 +24,12 @@ var devMiddleware = require('webpack-dev-middleware')(compiler, {
     chunks: false
   }
 })
-
+//配合webpack-dev-middleware使用
+//https://www.npmjs.com/package/webpack-hot-middleware
 var hotMiddleware = require('webpack-hot-middleware')(compiler)
 // force page reload when html-webpack-plugin template changes
 compiler.plugin('compilation', function (compilation) {
+//html-webpack-plugin的非同步事件
   compilation.plugin('html-webpack-plugin-after-emit', function (data, cb) {
     hotMiddleware.publish({ action: 'reload' })
     cb()
