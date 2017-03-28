@@ -56,6 +56,7 @@
 <script>
   export default {
     name: 'hello',
+//    接受子组件中的message
     props: ['message'],
     data(){
       return {cartList: []}
