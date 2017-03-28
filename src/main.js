@@ -3,16 +3,13 @@
 import Vue from 'vue'
 import VueResource from 'vue-resource'
 import App from './App'
+// 引入store
+import store from './store'
 
-// /* eslint-disable no-new */
-// new Vue({
-//   el: '#app',
-//   template: '<App/>',
-//   components: { App }
-// })
 Vue.use(VueResource);
 var vm = new Vue({
   el: '#app',
+  store,
   template:'<App/>',
   components: { App }
 

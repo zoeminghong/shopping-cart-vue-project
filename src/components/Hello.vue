@@ -1,6 +1,9 @@
 <template>
   <form>
     {{message}}
+    <br>
+    加减只差{{balance}}
+
     <slot>我是替补内容</slot>
     <table class="detial-wrap">
       <tr>
@@ -42,7 +45,8 @@
         </div>
       </div>
       <div class="checkout right">
-        <div class="total-money"><span class="name">总金额 :</span><span class="amount">{{ getTotalMount() | round}}元</span></div>
+        <div class="total-money"><span class="name">总金额 :</span><span
+          class="amount">{{ getTotalMount() | round}}元</span></div>
         <input type="submit" value="结账" class="danger"/>
       </div>
     </footer>
@@ -50,68 +54,60 @@
 </template>
 
 <script>
-export default {
-  name: 'hello',
-  props:['message'],
-  data(){
-    return{cartList:[]}
-  },
-  mounted: function () {
-    this.$nextTick(function () {
-      this.getDataList();
-    })
-  },
-  filters:{
-    round:function (value) {
-      return value.toFixed(2)
-    }
-  },
-  methods: {
-    getDataList: function () {
-      this.$http.get('static/resource/cart.json').then(function (response) {
-        this.cartList=response.body.result;
+  export default {
+    name: 'hello',
+    props: ['message'],
+    data(){
+      return {cartList: []}
+    },
+    mounted: function () {
+//    dom更新，$nextTick可以确保dom的更新
+      this.$nextTick(function () {
+        this.getDataList();
       })
     },
-    plus:function (item) {
-      item.count++;
-      this.$emit('change')
-    },
-    minus:function (item) {
-      if(item.count>1){
-        item.count--;
-        this.$emit('change')
-      }else{
-        item.count=1;
+    filters: {
+      round: function (value) {
+        return value.toFixed(2)
       }
     },
-    getTotalMount:function () {
-      var sum=0;
-      this.cartList.forEach(function (value,index) {
-        sum+=value.count*value.price;
-      });
-      return sum;
+    computed: {
+//    返回store中的值
+      balance () {
+        return this.$store.state.counts
+      }
+    },
+    methods: {
+      getDataList: function () {
+        this.$http.get('static/resource/cart.json').then(function (response) {
+          this.cartList = response.body.result;
+        })
+      },
+      plus: function (item) {
+        //触发vuex的action
+        this.$store.dispatch('increment')
+        item.count++;
+        //触发change事件，通知父组件
+        this.$emit('change')
+      },
+      minus: function (item) {
+        //触发vuex的action
+        this.$store.dispatch('decrement')
+        if (item.count > 1) {
+          item.count--;
+          //触发change事件，通知父组件
+          this.$emit('change')
+        } else {
+          item.count = 1;
+        }
+      },
+      getTotalMount: function () {
+        var sum = 0;
+        this.cartList.forEach(function (value, index) {
+          sum += value.count * value.price;
+        });
+        return sum;
+      }
     }
   }
-}
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<!--<style scoped>-->
-<!--h1, h2 {-->
-  <!--font-weight: normal;-->
-<!--}-->
-
-<!--ul {-->
-  <!--list-style-type: none;-->
-  <!--padding: 0;-->
-<!--}-->
-
-<!--li {-->
-  <!--display: inline-block;-->
-  <!--margin: 0 10px;-->
-<!--}-->
-
-<!--a {-->
-  <!--color: #42b983;-->
-<!--}-->
-<!--</style>-->
