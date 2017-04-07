@@ -8,6 +8,7 @@ import store from './store'
 
 Vue.use(VueResource);
 var vm = new Vue({
+  //为实例提供挂载元素。值可以是 CSS 选择符，或实际 HTML 元素，或返回 HTML 元素的函数
   el: '#app',
   store,
   template:'<App/>',
